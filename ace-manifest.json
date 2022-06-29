@@ -24,6 +24,18 @@
       "aliases": [],
       "flags": []
     },
+    "delete:creations": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/creations/DeleteCreations",
+      "commandName": "delete:creations",
+      "description": "delete all creations",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "make:project": {
       "settings": {
         "loadApp": true,
@@ -44,6 +56,18 @@
       "commandPath": "./commands/projects/DeleteProject",
       "commandName": "delete:project",
       "description": "Delete a project with an ID",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "delete:projects": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/projects/DeleteProjects",
+      "commandName": "delete:projects",
+      "description": "delete all projects",
       "args": [],
       "aliases": [],
       "flags": []

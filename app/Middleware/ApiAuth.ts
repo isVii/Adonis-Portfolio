@@ -5,10 +5,10 @@ export default class ApiAuth {
     const apiKey = request.header('API-Key')
 
     if (apiKey !== process.env.APIKey) {
-        response.status(401).send('API-Key was invalid')
+        response.status(403).send('Invalid API key')
         return false
     }
-    
+
     await next()
   }
 }
