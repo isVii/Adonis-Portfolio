@@ -26,3 +26,8 @@ import './routes/APIRoute'
 Route.get('/', async ({ view }) => {
   return view.render('home')
 })
+
+Route.get('/about',async ({view}) => {
+  return view.render('pages/about')
+})
+
