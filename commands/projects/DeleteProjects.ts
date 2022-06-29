@@ -13,8 +13,10 @@ export default class DeleteProjects extends BaseCommand {
 
   public async run() {
     const {default: Project} = await import('App/Models/Project')
+    
     const projects = await Project.all()
     projects.forEach(async (project) => await project.delete())
+
     this.logger.success('All projects was deleted')
   }
 }
