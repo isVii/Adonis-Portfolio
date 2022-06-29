@@ -9,6 +9,18 @@ export default class CreationsController {
         })
     }
 
+    public async getCreationJSON({request, response}: HttpContextContract) {
+        const id = request.param('id', 1)
+        const creation = await Creation.findBy('id', id)
+
+        if (!creation) {
+            response.status(404)
+            return
+        }
+        
+        return creation
+    }
+
     public async createCreation({request, response}: HttpContextContract): Promise<void> {
         
         const body = request.only(['creation_name', 'creation_description', 'github_url'])

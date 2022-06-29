@@ -8,6 +8,18 @@ export default class ProjectsController {
             projects: await Project.all()
         })
     }
+    
+    public async getProjectJSON({request, response}: HttpContextContract) {
+        const id = request.param('id', 1)
+        const project = await Project.findBy('id', id)
+
+        if (!project) {
+            response.status(404)
+            return
+        }
+        
+        return project
+    }
 
     public async createProject({request, response}: HttpContextContract): Promise<void> {
         const body = request.only(['project_name', 'project_description', 'image_url'])
