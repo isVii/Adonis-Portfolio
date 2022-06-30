@@ -17,7 +17,7 @@ export default class CreationsController {
             response.status(404)
             return
         }
-        
+
         return creation
     }
 
@@ -39,7 +39,7 @@ export default class CreationsController {
         return response.status(201).send(project)
     }
 
-    public async showProjectsEdge({view}: HttpContextContract) {
+    public async showCreationsEdge({view}: HttpContextContract) {
         return await view.render('pages/creations/creations', {
             projects: await Creation.all()
         })
