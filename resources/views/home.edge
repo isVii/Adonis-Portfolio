@@ -8,6 +8,30 @@
   @entryPointScripts('app')
 </head>
 <body>
+    @component('components/NavbarComponent')
+    @end
 
+    <main>
+
+      <div class="flex justify-between pt-40 ml-40 mr-40 items-center">
+          <div>
+            <h1 class="text-6xl font-extrabold max-w-3xl text-black">Bienvenue sur mon <span class="text-indigo-500 italic">Portfolio</span> !</h1>
+            <p class="text-gray-400 font-medium max-w-md mt-5">
+              Curabitur commodo nec massa nec bibendum. Aliquam erat tortor, luctus sit amet lacinia sed, feugiat vel quam. Nam pulvinar tempus ipsum non porta. Vivamus sed placerat leo, nec placerat massa. Praesent semper nisi vel sollicitudin pharetra. Integer sed justo mi. Quisque id neque diam. Cras cursus ligula ut luctus tempor.
+              </p>
+
+            <div class="flex space-x-6 mt-10 text-xl">
+              <a href="/projects/" class="px-4 py-2 rounded-md bg-indigo-500 hover:bg-indigo-400 text-center text-white shadow-md">Mes projets</a>
+              <a href="/creations/" class="px-4 py-2 rounded-md bg-white text-center text-indigo-500 border-2 border-indigo-500 shadow-md hover:text-white hover:bg-indigo-500 transition-all ease-in-out duration-100">
+                Mes réalisations
+              </a>
+            </div>
+          </div>
+              
+          <img alt="banner" src="/img/itadori.PNG" class="h-[500px] w-[500px] rounded-xl shadow-lg hover:-translate-x-1 hover:-translate-y-1  transition-all ease-in-out duration-100">
+
+      </div>
+
+    </main>
 </body>
 </html>
