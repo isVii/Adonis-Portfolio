@@ -28,7 +28,7 @@
         <div class="grid grid-cols-3 pt-10 space-y-5">
           @each(project in projects)
           <div class="overflow-hidden shadow-lg bg-white hover:bg-gray-50 rounded-lg h-90 w-72 hover:w-80 cursor-pointer mx-auto hover:-translate-y-2 transition-all ease-in-out duration-100">
-            <a href="/projects/{{project.id}}" class="w-full block h-full">
+            <a href="{{route('project', {id: project.id})}}" class="w-full block h-full">
               <img alt="banner" src="{{project.image_url}}" class="h-40 w-full object-cover"/>
               <div class="w-full p-4">
                 <p class="text-indigo-500 text-md font-medium">

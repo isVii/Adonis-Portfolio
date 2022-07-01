@@ -25,9 +25,9 @@ import './routes/APIRoute'
 
 Route.get('/', async ({ view }) => {
   return view.render('home')
-})
+}).as('home')
 
 Route.get('/about',async ({view}) => {
   return view.render('pages/about')
-})
+}).as('about')
 

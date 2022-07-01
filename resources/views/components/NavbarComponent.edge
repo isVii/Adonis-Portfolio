@@ -2,12 +2,12 @@
     <nav>
         <div class="flex justify-between py-6 items-center shadow-sm">
             <h1 class="text-2xl font-semibold ml-40 cursor-pointer email">contact@vii.fr</h1>
-            
+
             <ul class="flex space-x-6 text-2xl mr-40">
-                <li><a href="/" class="hover:text-indigo-500 transition-all ease-in-out duration-100">Accueil</a></li>
-                <li><a  href="/projects/" class="text-indigo-500 hover:text-indigo-400 transition-all ease-in-out duration-100">Projets</a></li>
-                <li><a href="/creations/" class="hover:text-indigo-500 transition-all ease-in-out duration-100">Réalisations</a></li>
-                <li><a href="/about/" class="hover:text-indigo-400 transition-all ease-in-out duration-100">A propos</a></li>
+                <li><a href={{ route('home')}} class="hover:text-indigo-500 transition-all ease-in-out duration-100">Accueil</a></li>
+                <li><a href={{ route('projects')}} class="text-indigo-500 hover:text-indigo-400 transition-all ease-in-out duration-100">Projets</a></li>
+                <li><a href={{ route('creations')}} class="hover:text-indigo-500 transition-all ease-in-out duration-100">Réalisations</a></li>
+                <li><a href={{ route('about')}} class="hover:text-indigo-400 transition-all ease-in-out duration-100">A propos</a></li>
             </ul>
         </div>
     </nav>
