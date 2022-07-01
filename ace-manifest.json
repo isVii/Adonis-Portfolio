@@ -1,12 +1,12 @@
 {
   "commands": {
-    "make:creation": {
+    "create:creation": {
       "settings": {
         "loadApp": true,
         "stayAlive": false
       },
       "commandPath": "./commands/creations/CreateCreation",
-      "commandName": "make:creation",
+      "commandName": "create:creation",
       "description": "Create a creation",
       "args": [],
       "aliases": [],
@@ -31,18 +31,54 @@
       },
       "commandPath": "./commands/creations/DeleteCreations",
       "commandName": "delete:creations",
-      "description": "delete all creations",
+      "description": "Supprimer toutes les réalisations",
       "args": [],
       "aliases": [],
       "flags": []
     },
-    "make:project": {
+    "create:mission": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/missions/CreateMission",
+      "commandName": "create:mission",
+      "description": "Create a mission",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "delete:mission": {
+      "settings": {
+        "loadApp": false,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/missions/DeleteMission",
+      "commandName": "delete:mission",
+      "description": "",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "delete:missions": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/missions/DeleteMissions",
+      "commandName": "delete:missions",
+      "description": "Supprimer toutes les missions",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
+    "create:project": {
       "settings": {
         "loadApp": true,
         "stayAlive": false
       },
       "commandPath": "./commands/projects/CreateProject",
-      "commandName": "make:project",
+      "commandName": "create:project",
       "description": "Create a project",
       "args": [],
       "aliases": [],
@@ -67,7 +103,7 @@
       },
       "commandPath": "./commands/projects/DeleteProjects",
       "commandName": "delete:projects",
-      "description": "delete all projects",
+      "description": "Supprimer tous les projets",
       "args": [],
       "aliases": [],
       "flags": []

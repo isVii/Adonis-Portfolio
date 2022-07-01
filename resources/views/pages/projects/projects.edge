@@ -10,5 +10,43 @@
 <body>
     @component('components/NavbarComponent')
     @end
+
+    <main>
+      <div class="pt-20">
+        <div class="text-center">
+          <h1 class="text-5xl font-bold">Découvrez mes <span class="text-indigo-500 italic animate-pulse">projets</span> !<h1>
+          <p class="text-gray-500 mx-auto max-w-xl pt-10">
+            Praesent sem dolor, mattis a ligula in, ullamcorper auctor velit.
+            Fusce massa velit, dictum sed ullamcorper eu, elementum non urna.
+            Cras euismod molestie efficitur. Vivamus consectetur venenatis nisl,
+            eu bibendum neque tincidunt at. Sed nisl sapien, gravida id aliquam eu,
+            dapibus ut risus. Fusce egestas sem est, sit amet accumsan sem suscipit
+            sed. Nullam a diam vel tellus dapibus ultricies a eget justo.
+            Cras libero diam, porta eget risus id, molestie ultrices odio.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-3 pt-10 space-y-5">
+          @each(project in projects)
+          <div class="overflow-hidden shadow-lg bg-white hover:bg-gray-50 rounded-lg h-90 w-72 hover:w-80 cursor-pointer mx-auto hover:-translate-y-2 transition-all ease-in-out duration-100">
+            <a href="/projects/{{project.id}}" class="w-full block h-full">
+              <img alt="banner" src="{{project.image_url}}" class="h-40 w-full object-cover"/>
+              <div class="w-full p-4">
+                <p class="text-indigo-500 text-md font-medium">
+                  Projet
+                </p>
+                <p class="text-gray-800 text-xl font-medium mb-2">
+                  {{project.name}}
+                </p>
+                <p class="text-gray-400 font-light text-md">
+                  {{project.description}}
+                </p>
+              </div>
+            </a>
+          </div>
+          @end
+        </div>
+      </div>
+    </main>
 </body>
 </html>

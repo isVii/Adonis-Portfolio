@@ -3,7 +3,7 @@ import { BaseCommand } from '@adonisjs/core/build/standalone'
 export default class DeleteCreations extends BaseCommand {
 
   public static commandName = 'delete:creations'
-  public static description = 'delete all creations'
+  public static description = 'Supprimer toutes les réalisations'
 
   public static settings = {
 
@@ -14,7 +14,11 @@ export default class DeleteCreations extends BaseCommand {
   public async run() {
     const {default: Creation} = await import('App/Models/Creation')
     const creations = await Creation.all()
-    creations.forEach(async (creation) => await creation.delete())
-    this.logger.success('All creatios was deleted')
+
+    for (const creation of creations) {
+      await  creation.delete()
+    }
+
+    this.logger.success('Toutes les réalisations ont été supprimées')
   }
 }

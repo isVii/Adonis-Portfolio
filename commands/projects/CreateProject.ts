@@ -1,8 +1,8 @@
-import { BaseCommand } from '@adonisjs/core/build/standalone'
+import {BaseCommand} from '@adonisjs/core/build/standalone'
 
 export default class CreateProject extends BaseCommand {
 
-  public static commandName = 'make:project'
+  public static commandName = 'create:project'
   public static description = 'Create a project'
 
   public static settings = {

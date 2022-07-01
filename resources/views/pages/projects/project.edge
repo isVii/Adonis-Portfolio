@@ -10,5 +10,70 @@
 <body>
     @component('components/NavbarComponent')
     @end
+
+    <main>
+
+
+      <div class="text-center w-full mx-auto pt-20">
+        <h1 class="text-5xl font-bold">Projet - <span class="text-indigo-500 italic animate-pulse">{{project.name}}</span> !<h1>
+        <p class="text-xl mt-4 max-w-md mx-auto text-gray-400">
+            {{project.description}}
+        </p>
+        <img alt="banner" src="{{project.image_url}}" class="w-[800px] h-[400px] rounded-md mt-5 mx-auto shadow-md">
+      </div>
+
+
+      <div class="text-center w-full mx-auto pt-20">
+        <h1 class="text-5xl flex justify-center font-extrabold text-black">
+          Mission(s)
+        </h1>
+        <p class="text-xl mt-4 max-w-md mx-auto text-gray-400">
+          Mission(s) que j'ai pu réaliser pour ce projet.
+        </p>
+      </div>
+
+
+      <div class="px-4 py-5 pt-10">
+            <div class="bg-white overflow-hidden">
+                <ul class=" space-y-5">
+                  @each(mission in missions)
+                    <li class="border-[1px] rounder-md  border-gray-200>
+                      <a class="block">
+                        <div class="px-4 py-4">
+                          <div class="flex items-center justify-between">
+                            <p class="text-md text-gray-700">
+                              {{mission.description}}
+                            </p>
+                            <div class="ml-2 flex-shrink-0 flex">
+                              @if(mission.state == 0)
+                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                  Terminée
+                                </p>
+                              @elseif(mission.state == 1)
+                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                  Commencée
+                                </p>
+                              @elseif(mission.state == 2)
+                                <p class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                  Annulée
+                                </p>
+                              @end
+                            </div>
+                            </div>
+                              <div class="mt-2">
+                                <div class="">
+                                  <p class="flex items-center text-md font-light text-gray-500">
+                                    {{mission.name}}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                    @end
+                </ul>
+              </div>
+          </div>
+    </main>
 </body>
 </html>

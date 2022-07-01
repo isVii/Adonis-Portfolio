@@ -1,4 +1,4 @@
- import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import type {HttpContextContract} from '@ioc:Adonis/Core/HttpContext'
 import Project from 'App/Models/Project'
 
 export default class ProjectsController {
@@ -8,7 +8,7 @@ export default class ProjectsController {
             projects: await Project.all()
         })
     }
-    
+
     public async getProjectJSON({request, response}: HttpContextContract) {
         const id = request.param('id', 1)
         const project = await Project.findBy('id', id)
@@ -17,7 +17,7 @@ export default class ProjectsController {
             response.status(404)
             return
         }
-        
+
         return project
     }
 
@@ -52,8 +52,12 @@ export default class ProjectsController {
             response.status(404)
             return
         }
+
+        await project.load('missions')
+
         return await view.render('pages/projects/project', {
-            project: project
+            project: project,
+            missions: project.missions
         })
     }
 }

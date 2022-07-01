@@ -1,5 +1,6 @@
 import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 
+
 export default class AppProvider {
   constructor (protected app: ApplicationContract) {
   }
@@ -9,11 +10,11 @@ export default class AppProvider {
   }
 
   public async boot () {
-    // IoC container is ready
+
   }
 
   public async ready () {
-    // App is ready
+
   }
 
   public async shutdown () {

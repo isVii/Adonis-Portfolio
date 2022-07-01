@@ -3,7 +3,7 @@ import { BaseCommand } from '@adonisjs/core/build/standalone'
 export default class DeleteProjects extends BaseCommand {
 
   public static commandName = 'delete:projects'
-  public static description = 'delete all projects'
+  public static description = 'Supprimer tous les projets'
 
   public static settings = {
 
@@ -13,10 +13,12 @@ export default class DeleteProjects extends BaseCommand {
 
   public async run() {
     const {default: Project} = await import('App/Models/Project')
-    
-    const projects = await Project.all()
-    projects.forEach(async (project) => await project.delete())
 
-    this.logger.success('All projects was deleted')
+    const projects = await Project.all()
+    for (const project of projects) {
+      await project.delete();
+    }
+
+    this.logger.success('Tous les projets ont été supprimés')
   }
 }
